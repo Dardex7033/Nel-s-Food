@@ -53,7 +53,7 @@ nav a {
 
 .hero-image img {
   width: 100%;
-  max-width: 280px;   /* 🔥 control logo size */
+  max-width: 350px;   /* 🔥 control logo size */
   height: auto;
   object-fit: contain;
 
