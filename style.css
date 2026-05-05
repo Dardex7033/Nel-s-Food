@@ -153,20 +153,20 @@ nav a {
 ========================= */
 }
     /* HEADER */
-    .header {
+    header {
         flex-direction: column;
         padding: 15px;
         text-align: center;
     }
 
-    .nav {
+    nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 10px;
     }
 
-    .nav a {
+    nav a {
         margin: 8px 10px;
         font-size: 13px;
     }
@@ -309,6 +309,8 @@ nav a {
         text-align: center;
         gap: 10px;
     }
+ 
+/* form */
 .form-popup {
   display: none;
   position: fixed;
