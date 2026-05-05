@@ -52,8 +52,8 @@ nav a {
 }
 
 .hero-image img {
-  width: 100%;        /* 🔥 take full width */
-  height: auto;
+  width: 120%;   /* 🔥 bigger than container */
+  max-width: none;
 
 }
 
