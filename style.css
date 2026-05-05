@@ -152,124 +152,78 @@ nav a {
    MOBILE OPTIMIZATION
 ========================= */
 }
-    /* HEADER */
-    header {
-        flex-direction: column;
-        padding: 15px;
-        text-align: center;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    nav a {
-        margin: 8px 10px;
-        font-size: 13px;
-    }
-
-/* HERO LAYOUT */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 10%;
-  min-height: 90vh;
-  background: linear-gradient(135deg, #fff6f0, #ffe5d9);
-  gap: 40px;
+.body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fffaf5;
 }
 
-/* LEFT SIDE */
-.hero-left {
-  flex: 1.5;
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px 30px;
 }
 
 .tagline {
-  font-weight: 600;
-  color: #ff5a2c;
+  color: #ff6b35;
+  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
-.hero-left h1 {
-  font-size: 56px;
-  font-weight: 700;
+.hero h1 {
+  font-size: 32px;
   margin: 10px 0;
 }
 
-.subtitle {
-  font-size: 18px;
+.hero p {
   color: #555;
-  max-width: 400px;
+  max-width: 300px;
+  margin: auto;
+  line-height: 1.5;
 }
 
-/* BUTTONS */
+/* BUTTON GROUP */
 .hero-buttons {
-  margin-top: 30px;
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
 }
 
+/* BUTTON STYLE */
 .btn {
   padding: 12px 18px;
-  border-radius: 10px;
+  border-radius: 30px;
+  font-weight: 600;
   border: none;
-  font-weight: bold;
   cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
+/* PRIMARY (ORDER) */
 .btn.primary {
-  background: #25d366;
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
   color: white;
+  box-shadow: 0 4px 12px rgba(255,107,53,0.4);
 }
 
+/* SECONDARY (MENU) */
 .btn.secondary {
-  border: 2px solid #ff5a2c;
-  color: #ff5a2c;
+  background: white;
+  border: 2px solid #ff6b35;
+  color: #ff6b35;
 }
 
-/* RIGHT SIDE (LOGO) */
-.hero-right {
-  flex: 1.8;
-  display: flex;
-  justify-content: center;
+/* HOVER EFFECT */
+.btn:hover {
+  transform: translateY(-2px);
 }
 
-.hero-right img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+/* MOBILE TOUCH FEEL */
+.btn:active {
+  transform: scale(0.97);
 }
-
-/* MOBILE */
-@media (max-width: 768px) {
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 60vh;
-  text-align: center;
-  gap: 15px;
-}
-
-  .hero-left h1 {
-    font-size: 40px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-right img {
-    max-width: 280px;
-    margin-top: 30px;
-  }
-}
-
     /* CTA BUTTON */
     .cta-button {
         width: 100%;
