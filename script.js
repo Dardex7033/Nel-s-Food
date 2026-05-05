@@ -3,8 +3,11 @@ function scrollToMenu() {
   document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
 }
 
-function openOrderModal() {
-  document.getElementById("orderModal").style.display = "block";
+function openOrderNow() {
+  const modal = document.getElementById("orderModal");
+  if (modal) {
+    modal.style.display = "flex";
+  }
 }
 let selectedItem = "";
 let selectedPrice = 0;
