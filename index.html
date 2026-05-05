@@ -104,6 +104,20 @@
         </div>
     </section>
 
+     <!-- Order Section -->
+    <div id="orderForm" class="form-popup">
+  <div class="form-box">
+    <h2>Order Burger 🍔</h2>
+
+    <input type="text" id="name" placeholder="Nama" required>
+    <input type="text" id="phone" placeholder="No Phone" required>
+    <textarea id="order" placeholder="Order anda (contoh: 2x Beef Special + 1 Fries)"></textarea>
+
+    <button onclick="sendToWhatsApp()">Hantar ke WhatsApp</button>
+    <button class="close-btn" onclick="closeForm()">Tutup</button>
+  </div>
+</div>
+
     <!-- Info Footer Section -->
     <footer>
         <div class="info-bar">
@@ -119,6 +133,8 @@
             <div class="contact-item">🎵 @nels_bogorrr</div>
         </div>
     </footer>
+   
+   
 
 </body>
 </html>
