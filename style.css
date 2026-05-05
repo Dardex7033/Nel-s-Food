@@ -45,7 +45,7 @@ nav a {
 }
 
 .hero-image {
-  flex: 1;
+  flex: 1.5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,6 @@ nav a {
 
 .hero-image img {
   width: 100%;        /* 🔥 take full width */
-  max-width: 500px;   /* control max so it doesn't go crazy big */
   height: auto;
 
 }
