@@ -28,7 +28,25 @@ nav a {
     font-weight: 600;
     font-size: 14px;
 }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
 
+/* FIX LOGO SIZE */
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+/* FIX NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+}
 /* Features */
 .features {
     display: flex;
