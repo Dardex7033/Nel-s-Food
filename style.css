@@ -225,7 +225,11 @@ h1 {
     max-width: 280px;
   }
 }
-
+.btn.primary {
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  color: white;
+  box-shadow: 0 6px 16px rgba(255,107,53,0.4);
+}
     /* HEADER */
     header {
         flex-direction: column;
