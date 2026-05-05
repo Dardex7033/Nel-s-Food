@@ -184,7 +184,7 @@ nav a {
 
 /* LEFT SIDE */
 .hero-left {
-  flex: 2;
+  flex: 1.5;
 }
 
 .tagline {
@@ -231,7 +231,7 @@ nav a {
 
 /* RIGHT SIDE (LOGO) */
 .hero-right {
-  flex: 1.2;
+  flex: 1.8;
   display: flex;
   justify-content: center;
 }
