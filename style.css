@@ -41,7 +41,7 @@ nav a {
 
 .hero-content {
   flex: 1;
-  min-width: 280px;
+  min-width: 300px;
 }
 
 .hero-image {
@@ -52,10 +52,9 @@ nav a {
 }
 
 .hero-image img {
-  width: 150%;
-  max-width: 350px;   /* 🔥 control logo size */
+  width: 100%;        /* 🔥 take full width */
+  max-width: 500px;   /* control max so it doesn't go crazy big */
   height: auto;
-  object-fit: contain;
 
 }
 
@@ -87,7 +86,16 @@ h1 {
 
 .hero-image img {
     width: 700px;
-}
+    
+}@media (max-width: 768px)
+{
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-image img {
+    max-width: 90%;  /* nearly full screen */
+  }
 
 /* Features */
 .features {
