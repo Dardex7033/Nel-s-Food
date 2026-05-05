@@ -212,6 +212,10 @@ h1 {
    MOBILE OPTIMIZATION
 ========================= */
 @media (max-width: 768px) {
+  .logo {
+    width: 90px;
+  }
+}
 
     /* HEADER */
     header {
@@ -231,6 +235,12 @@ h1 {
         margin: 8px 10px;
         font-size: 13px;
     }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
 
     /* HERO */
     .hero {
@@ -301,4 +311,9 @@ h1 {
         text-align: center;
         gap: 10px;
     }
+    .logo {
+  width: 120px;
+  height: auto;
 }
+}
+
