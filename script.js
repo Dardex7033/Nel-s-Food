@@ -6,6 +6,7 @@ function openForm() {
 function closeForm() {
   document.getElementById("orderForm").style.display = "none";
 }
+</script>
 
 function sendToWhatsApp() {
   let name = document.getElementById("name").value;
