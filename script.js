@@ -8,5 +8,5 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "order.html";
     });
   }
-
+window.open("order.html", "_blank");
 });
