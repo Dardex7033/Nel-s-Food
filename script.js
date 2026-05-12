@@ -1,27 +1,18 @@
-function openOrderForm() {
-    document.getElementById("orderPopup").style.display = "flex";
-}
-
-function closeOrderForm() {
-    document.getElementById("orderPopup").style.display = "none";
-}
-function sendWhatsApp() {
-
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let item = document.getElementById("item").value;
-    let address = document.getElementById("address").value;
+function orderNow() {
 
     let message =
-`🍔 *NEL'S BOGORRR ORDER*
+`🍔 NEL'S BOGORRR ORDER
 
-Nama: ${name}
-No Tel: ${phone}
+Nama: -
+No Tel: -
 
 🧾 Order:
-- ${item}
+- Burger Ayam RM8
+- Fries RM5
 
-📍 Alamat: ${address}
+💰 Total: RM13
+
+📍 Alamat: -
 
 Terima kasih 🙌`;
 
