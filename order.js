@@ -1,6 +1,8 @@
 let cart = [];
 
-// 🔥 MUST BE GLOBAL so HTML onclick can see it
+/* =========================
+   ADD TO CART (GLOBAL FIX)
+========================= */
 window.addToCart = function(name, price) {
 
   let item = cart.find(i => i.name === name);
@@ -11,58 +13,62 @@ window.addToCart = function(name, price) {
     cart.push({ name, price, qty: 1 });
   }
 
-  renderCart();
-  updateCartCount(); // 🔥 update floating badge
+  updateCart();
 };
 
+
+/* =========================
+   REMOVE ITEM
+========================= */
 window.removeItem = function(index) {
   cart.splice(index, 1);
-  renderCart();
+  updateCart();
 };
 
-document.addEventListener("DOMContentLoaded", function () {
+
+/* =========================
+   UPDATE CART UI
+========================= */
+function updateCart() {
 
   const cartItems = document.getElementById("cartItems");
   const totalPrice = document.getElementById("totalPrice");
+
+  if (!cartItems || !totalPrice) return;
+
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+
+    let itemTotal = item.price * item.qty;
+    total += itemTotal;
+
+    cartItems.innerHTML += `
+      <div style="display:flex;justify-content:space-between;margin:6px 0;">
+        <div>${item.name} x${item.qty}</div>
+        <div>
+          RM${itemTotal}
+          <button onclick="removeItem(${index})">❌</button>
+        </div>
+      </div>
+    `;
+  });
+
+  totalPrice.textContent = total.toFixed(2);
+}
+
+
+/* =========================
+   WHATSAPP BUTTON FIX
+========================= */
+document.addEventListener("DOMContentLoaded", function () {
+
   const sendWhatsapp = document.getElementById("sendWhatsapp");
 
-  if (!cartItems || !totalPrice || !sendWhatsapp) {
-    console.error("Missing cart elements in HTML!");
-    return;
-  }
+  if (!sendWhatsapp) return;
 
-  function renderCart() {
-
-    cartItems.innerHTML = "";
-
-    let total = 0;
-
-    cart.forEach((item, index) => {
-
-      let itemTotal = item.price * item.qty;
-      total += itemTotal;
-
-      cartItems.innerHTML += `
-        <div style="display:flex;justify-content:space-between;margin:6px 0;">
-          <div>${item.name} x${item.qty}</div>
-          <div>
-            RM${itemTotal}
-            <button onclick="removeItem(${index})">❌</button>
-          </div>
-        </div>
-      `;
-    });
-
-    totalPrice.textContent = total.toFixed(2);
-  }
-function toggleCart() {
-  document.getElementById("cartPanel").classList.toggle("open");
-}
-
-function updateCartCount() {
-  const count = cart.reduce((sum, item) => sum + item.qty, 0);
-  document.getElementById("cartCount").textContent = count;
-}
   sendWhatsapp.addEventListener("click", function () {
 
     if (cart.length === 0) {
@@ -74,6 +80,7 @@ function updateCartCount() {
     let total = 0;
 
     cart.forEach(item => {
+
       let itemTotal = item.price * item.qty;
       total += itemTotal;
 
