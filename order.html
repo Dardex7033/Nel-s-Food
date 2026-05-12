@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order - Nel's Bogorrr</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">🍔 ORDER NEL'S BOGORRR</h2>
+
+<div class="order-box">
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check"
+        data-name="Burger Biasa"
+        data-price="6">
+      Burger Biasa - RM6
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check"
+        data-name="Cheese Burger"
+        data-price="8">
+      Cheese Burger - RM8
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check"
+        data-name="Fries"
+        data-price="5">
+      Fries - RM5
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <hr>
+
+  <h3>Total: RM <span id="totalPrice">0</span></h3>
+
+  <button id="sendWhatsapp" class="send-btn">
+    Send WhatsApp Order
+  </button>
+
+</div>
+
+<script src="order.js"></script>
+
+</body>
+</html>
