@@ -1,37 +1,3 @@
-
-// OPEN CHECKOUT
-window.openCheckout = function () {
-
-  document.getElementById("checkoutModal").style.display = "block";
-
-  const checkoutItems = document.getElementById("checkoutItems");
-  const checkoutTotal = document.getElementById("checkoutTotal");
-
-  checkoutItems.innerHTML = "";
-
-  let total = 0;
-
-  cart.forEach(item => {
-
-    let itemTotal = item.price * item.qty;
-    total += itemTotal;
-
-    checkoutItems.innerHTML += `
-      <div>${item.name} x${item.qty} = RM${itemTotal}</div>
-    `;
-  });
-
-  checkoutTotal.textContent = total.toFixed(2);
-};
-
-
-// CLOSE CHECKOUT
-window.closeCheckout = function () {
-  document.getElementById("checkoutModal").style.display = "none";
-};
-
-
-// SEND WHATSAPP
 window.sendOrderWhatsApp = function () {
 
   let name = document.getElementById("custName").value;
@@ -43,23 +9,39 @@ window.sendOrderWhatsApp = function () {
     return;
   }
 
-  let msg = `🍔 *NEL'S ORDER*%0A`;
-  msg += `Nama: ${name}%0A`;
-  msg += `Phone: ${phone}%0A`;
-  msg += `Alamat: ${address}%0A%0A`;
+  let msg = "";
+
+  // HEADER
+  msg += "🧾 *NEL'S BOGORRR RECEIPT*%0A";
+  msg += "----------------------------%0A";
+
+  // CUSTOMER INFO
+  msg += `👤 Name: ${name}%0A`;
+  msg += `📱 Phone: ${phone}%0A`;
+  msg += `🏠 Address: ${address}%0A`;
+  msg += "----------------------------%0A";
+
+  msg += "🍔 *ITEMS*%0A";
 
   let total = 0;
 
+  // ITEMS
   cart.forEach(item => {
 
     let itemTotal = item.price * item.qty;
     total += itemTotal;
 
-    msg += `• ${item.name} x${item.qty} = RM${itemTotal}%0A`;
+    msg += `- ${item.name} x${item.qty}   RM${itemTotal}%0A`;
   });
 
-  msg += `%0A💰 *TOTAL: RM${total.toFixed(2)}*`;
+  msg += "----------------------------%0A";
 
+  // TOTAL
+  msg += `💰 *TOTAL: RM${total.toFixed(2)}*%0A`;
+  msg += "----------------------------%0A";
+  msg += "🙏 Thank you for ordering!%0A";
+
+  // SEND
   window.open(
     "https://wa.me/601114290341?text=" + encodeURIComponent(msg),
     "_blank"
