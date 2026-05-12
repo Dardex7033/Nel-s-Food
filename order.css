@@ -8,7 +8,13 @@
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   font-family: 'Fredoka', sans-serif;
 }
-
+#cartItems {
+  margin-top: 15px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
 /* MENU ITEM */
 .menu-item {
   display: flex;
