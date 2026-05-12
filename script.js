@@ -1,49 +1,25 @@
-window.sendOrderWhatsApp = function () {
+function orderNow() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let location = document.getElementById("location").value;
 
-  let name = document.getElementById("custName").value;
-  let phone = document.getElementById("custPhone").value;
-  let address = document.getElementById("custAddress").value;
+    let orderMessage =
+`🍔 NEW ORDER - NEL'S BOGORRR
 
-  if (!name || !phone || !address) {
-    alert("Sila isi semua maklumat!");
-    return;
-  }
+Nama: ${name}
+No Telefon: ${phone}
 
-  let msg = "";
+🧾 Order Details:
+- Burger Ayam x1 - RM8
+- Fries x1 - RM5
 
-  // HEADER
-  msg += "🧾 *NEL'S BOGORRR RECEIPT*%0A";
-  msg += "----------------------------%0A";
+💰 Total: RM13
 
-  // CUSTOMER INFO
-  msg += `👤 Name: ${name}%0A`;
-  msg += `📱 Phone: ${phone}%0A`;
-  msg += `🏠 Address: ${address}%0A`;
-  msg += "----------------------------%0A";
+📍 Penghantaran / Pickup: ${location}
 
-  msg += "🍔 *ITEMS*%0A";
+Terima kasih! 🙌`;
 
-  let total = 0;
+    let whatsappURL = "https://wa.me/601114290341?text=" + encodeURIComponent(orderMessage);
 
-  // ITEMS
-  cart.forEach(item => {
-
-    let itemTotal = item.price * item.qty;
-    total += itemTotal;
-
-    msg += `- ${item.name} x${item.qty}   RM${itemTotal}%0A`;
-  });
-
-  msg += "----------------------------%0A";
-
-  // TOTAL
-  msg += `💰 *TOTAL: RM${total.toFixed(2)}*%0A`;
-  msg += "----------------------------%0A";
-  msg += "🙏 Thank you for ordering!%0A";
-
-  // SEND
-  window.open(
-    "https://wa.me/601114290341?text=" + encodeURIComponent(msg),
-    "_blank"
-  );
-};
+    window.open(whatsappURL, "_blank");
+}
