@@ -1,7 +1,9 @@
 let cart = [];
 
-// MAKE FUNCTIONS GLOBAL (IMPORTANT FOR onclick)
+// ✅ MUST BE GLOBAL FOR onclick HTML BUTTONS
 window.addToCart = function(name, price) {
+
+  console.log("Added:", name, price);
 
   let item = cart.find(i => i.name === name);
 
@@ -11,15 +13,16 @@ window.addToCart = function(name, price) {
     cart.push({ name, price, qty: 1 });
   }
 
-  renderCart();
+  updateCart();
 };
 
 window.removeItem = function(index) {
   cart.splice(index, 1);
-  renderCart();
+  updateCart();
 };
 
-// WAIT UNTIL PAGE FULLY LOADS
+
+// WAIT FOR PAGE LOAD
 document.addEventListener("DOMContentLoaded", function () {
 
   const cartItems = document.getElementById("cartItems");
@@ -27,7 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const sendWhatsapp = document.getElementById("sendWhatsapp");
 
 
-  function renderCart() {
+  // ❗ SAFETY CHECK (VERY IMPORTANT)
+  if (!cartItems || !totalPrice || !sendWhatsapp) {
+    console.error("Missing HTML elements!");
+    return;
+  }
+
+
+  function updateCart() {
 
     cartItems.innerHTML = "";
 
@@ -53,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  // WHATSAPP FIX
   sendWhatsapp.addEventListener("click", function () {
 
     if (cart.length === 0) {
@@ -65,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let total = 0;
 
     cart.forEach(item => {
-
       let itemTotal = item.price * item.qty;
       total += itemTotal;
 
