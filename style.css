@@ -140,6 +140,13 @@ h1 {
 
 .card-header.red { background: var(--primary-red); }
 .card-header.orange { background: var(--primary-orange); }
+.card-header.yellow {
+    background: #f4b400;
+}
+
+.card-header.pink {
+    background: #ff4f87;
+}
 .menu-card {
     border-radius: 20px;
     overflow: hidden;
