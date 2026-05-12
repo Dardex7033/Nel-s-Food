@@ -1,142 +1,28 @@
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="checkoutModal" class="modal">
 
-  <title>Order - Nel's Bogorrr</title>
+  <div class="modal-content">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="order.css">
-</head>
+    <span class="close" onclick="closeCheckout()">&times;</span>
 
+    <h2>🧾 Checkout</h2>
 
-<div class="order-box">
+    <input type="text" id="custName" placeholder="Nama Anda">
+    <input type="text" id="custPhone" placeholder="No Telefon">
+    <textarea id="custAddress" placeholder="Alamat"></textarea>
 
-  <h2>🍔 BURGER</h2>
+    <h3>Order Summary</h3>
+    <div id="checkoutItems"></div>
 
-  <div class="menu-item">
-    <span>Biasa Ayam - RM6</span>
-    <button onclick="addToCart('Biasa Ayam', 6)">Add to Cart</button>
+    <h3>Total: RM <span id="checkoutTotal">0</span></h3>
+
+    <button onclick="sendOrderWhatsApp()" class="send-btn">
+      Confirm & Send WhatsApp
+    </button>
+
   </div>
 
-  <div class="menu-item">
-    <span>Biasa Beef - RM6</span>
-    <button onclick="addToCart('Biasa Beef', 6)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Cheese Ayam - RM8</span>
-    <button onclick="addToCart('Cheese Ayam', 8)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Cheese Beef - RM8</span>
-    <button onclick="addToCart('Cheese Beef', 8)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Special Ayam - RM10</span>
-    <button onclick="addToCart('Special Ayam', 10)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Special Beef - RM10</span>
-    <button onclick="addToCart('Special Beef', 10)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Double Ayam Cheese - RM11</span>
-    <button onclick="addToCart('Double Ayam Cheese', 11)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Double Beef Cheese - RM11</span>
-    <button onclick="addToCart('Double Beef Cheese', 11)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Double Ayam Special - RM13</span>
-    <button onclick="addToCart('Double Ayam Special', 13)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Double Beef Special - RM13</span>
-    <button onclick="addToCart('Double Beef Special', 13)">Add to Cart</button>
-  </div>
-
-  <h2>🍟 SET FRIES</h2>
-
-  <div class="menu-item">
-    <span>Set Biasa Ayam - RM9</span>
-    <button onclick="addToCart('Set Biasa Ayam', 9)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Biasa Beef - RM9</span>
-    <button onclick="addToCart('Set Biasa Beef', 9)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Ayam Cheese - RM11</span>
-    <button onclick="addToCart('Set Ayam Cheese', 11)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Beef Cheese - RM11</span>
-    <button onclick="addToCart('Set Beef Cheese', 11)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Ayam Special - RM13</span>
-    <button onclick="addToCart('Set Ayam Special', 13)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Beef Special - RM13</span>
-    <button onclick="addToCart('Set Beef Special', 13)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Double Ayam Cheese - RM14</span>
-    <button onclick="addToCart('Set Double Ayam Cheese', 14)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Double Beef Cheese - RM14</span>
-    <button onclick="addToCart('Set Double Beef Cheese', 14)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Double Ayam Special - RM16</span>
-    <button onclick="addToCart('Set Double Ayam Special', 16)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Set Double Beef Special - RM16</span>
-    <button onclick="addToCart('Set Double Beef Special', 16)">Add to Cart</button>
-  </div>
-
-  <h2>🥤 SIDES</h2>
-
-  <div class="menu-item">
-    <span>Fries - RM5</span>
-    <button onclick="addToCart('Fries', 5)">Add to Cart</button>
-  </div>
-
-  <div class="menu-item">
-    <span>Corndog - RM5</span>
-    <button onclick="addToCart('Corndog', 5)">Add to Cart</button>
-  </div>
-
-<div id="floatingCart">
-  🛒
-  <span id="cartCount">0</span>
 </div>
 
-<div id="cartPanel" class="cart-panel">
-  <div id="cartItems"></div>
-  <h3>Total: RM <span id="totalPrice">0</span></h3>
-
-  <button id="sendWhatsapp">Send WhatsApp Order</button>
-</div>
-
-  <script src="order.js"></script>
+<button class="checkout-btn" onclick="openCheckout()">
+  🧾 Checkout
+</button>
