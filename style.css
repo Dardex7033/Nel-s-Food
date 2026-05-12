@@ -140,12 +140,15 @@ h1 {
 
 .card-header.red { background: var(--primary-red); }
 .card-header.orange { background: var(--primary-orange); }
-.card-header.yellow {
-    background: #f4b400;
+.menu-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
 }
 
-.card-header.pink {
-    background: #ff4f87;
+.menu-card:hover {
+    transform: translateY(-5px);
 }
 .price-list {
     list-style: none;
