@@ -58,8 +58,23 @@ function updateCart() {
 
   totalPrice.textContent = total.toFixed(2);
 }
+/* =========================
+   FLOATING CART
+========================= */
+document.addEventListener("DOMContentLoaded", function () {
 
+  const floatingCart = document.getElementById("floatingCart");
 
+  if (!floatingCart) {
+    console.error("Floating cart NOT FOUND in HTML");
+    return;
+  }
+
+  floatingCart.addEventListener("click", function () {
+    document.getElementById("cartPanel").classList.toggle("open");
+  });
+
+});
 /* =========================
    WHATSAPP BUTTON FIX
 ========================= */
