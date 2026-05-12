@@ -1,113 +1,68 @@
-let cart = [];
 
-/* =========================
-   ADD TO CART (GLOBAL FIX)
-========================= */
-window.addToCart = function(name, price) {
+// OPEN CHECKOUT
+window.openCheckout = function () {
 
-  let item = cart.find(i => i.name === name);
+  document.getElementById("checkoutModal").style.display = "block";
 
-  if (item) {
-    item.qty += 1;
-  } else {
-    cart.push({ name, price, qty: 1 });
-  }
+  const checkoutItems = document.getElementById("checkoutItems");
+  const checkoutTotal = document.getElementById("checkoutTotal");
 
-  updateCart();
-};
-
-
-/* =========================
-   REMOVE ITEM
-========================= */
-window.removeItem = function(index) {
-  cart.splice(index, 1);
-  updateCart();
-};
-
-
-/* =========================
-   UPDATE CART UI
-========================= */
-function updateCart() {
-
-  const cartItems = document.getElementById("cartItems");
-  const totalPrice = document.getElementById("totalPrice");
-
-  if (!cartItems || !totalPrice) return;
-
-  cartItems.innerHTML = "";
+  checkoutItems.innerHTML = "";
 
   let total = 0;
 
-  cart.forEach((item, index) => {
+  cart.forEach(item => {
 
     let itemTotal = item.price * item.qty;
     total += itemTotal;
 
-    cartItems.innerHTML += `
-      <div style="display:flex;justify-content:space-between;margin:6px 0;">
-        <div>${item.name} x${item.qty}</div>
-        <div>
-          RM${itemTotal}
-          <button onclick="removeItem(${index})">❌</button>
-        </div>
-      </div>
+    checkoutItems.innerHTML += `
+      <div>${item.name} x${item.qty} = RM${itemTotal}</div>
     `;
   });
 
-  totalPrice.textContent = total.toFixed(2);
-}
-/* =========================
-   FLOATING CART
-========================= */
-document.addEventListener("DOMContentLoaded", function () {
+  checkoutTotal.textContent = total.toFixed(2);
+};
 
-  const floatingCart = document.getElementById("floatingCart");
 
-  if (!floatingCart) {
-    console.error("Floating cart NOT FOUND in HTML");
+// CLOSE CHECKOUT
+window.closeCheckout = function () {
+  document.getElementById("checkoutModal").style.display = "none";
+};
+
+
+// SEND WHATSAPP
+window.sendOrderWhatsApp = function () {
+
+  let name = document.getElementById("custName").value;
+  let phone = document.getElementById("custPhone").value;
+  let address = document.getElementById("custAddress").value;
+
+  if (!name || !phone || !address) {
+    alert("Sila isi semua maklumat!");
     return;
   }
 
-  floatingCart.addEventListener("click", function () {
-    document.getElementById("cartPanel").classList.toggle("open");
+  let msg = `🍔 *NEL'S ORDER*%0A`;
+  msg += `Nama: ${name}%0A`;
+  msg += `Phone: ${phone}%0A`;
+  msg += `Alamat: ${address}%0A%0A`;
+
+  let total = 0;
+
+  cart.forEach(item => {
+
+    let itemTotal = item.price * item.qty;
+    total += itemTotal;
+
+    msg += `• ${item.name} x${item.qty} = RM${itemTotal}%0A`;
   });
 
-});
-/* =========================
-   WHATSAPP BUTTON FIX
-========================= */
-document.addEventListener("DOMContentLoaded", function () {
+  msg += `%0A💰 *TOTAL: RM${total.toFixed(2)}*`;
 
-  const sendWhatsapp = document.getElementById("sendWhatsapp");
-
-  if (!sendWhatsapp) return;
-
-  sendWhatsapp.addEventListener("click", function () {
-
-    if (cart.length === 0) {
-      alert("Cart kosong!");
-      return;
-    }
-
-    let msg = "🍔 *NEL'S BOGORRR ORDER*%0A%0A";
-    let total = 0;
-
-    cart.forEach(item => {
-
-      let itemTotal = item.price * item.qty;
-      total += itemTotal;
-
-      msg += `• ${item.name} x${item.qty} = RM${itemTotal}%0A`;
-    });
-
-    msg += `%0A💰 *TOTAL: RM${total.toFixed(2)}*`;
-
-    window.open(
-      "https://wa.me/601114290341?text=" + encodeURIComponent(msg),
-      "_blank"
-    );
-  });
-
+  window.open(
+    "https://wa.me/601114290341?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+};
 });
