@@ -118,6 +118,28 @@
 
             <img src="Corn Dawg.png" alt="Corndog" class="menu-img">
         </div>
+<!-- Order Section -->
+      <div id="orderPopup" class="popup">
+  <div class="popup-content">
+
+    <span class="close" onclick="closeOrderForm()">×</span>
+
+    <h2>🍔 Order Form</h2>
+
+    <input id="name" placeholder="Nama">
+    <input id="phone" placeholder="No Telefon">
+
+    <select id="item">
+      <option value="Burger Ayam - RM8">Burger Ayam - RM8</option>
+      <option value="Fries - RM5">Fries - RM5</option>
+      <option value="Burger + Fries - RM12">Burger + Fries - RM12</option>
+    </select>
+
+    <input id="address" placeholder="Alamat">
+
+    <button onclick="sendWhatsApp()">CONFIRM ORDER</button>
+
+  </div>
 
     <!-- Info Footer Section -->
     <footer>
