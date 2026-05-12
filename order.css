@@ -78,7 +78,58 @@
   font-weight: bold;
   cursor: pointer;
 }
+/* FLOATING CART BUTTON */
+#floatingCart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 26px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 999;
+}
 
+/* CART COUNT BADGE */
+#cartCount {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CART PANEL */
+.cart-panel {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background: white;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+  padding: 15px;
+  transition: 0.3s;
+  z-index: 998;
+}
+
+.cart-panel.open {
+  right: 0;
+}
 .send-btn:hover {
   background: #1ebe5d;
 }
