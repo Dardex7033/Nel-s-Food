@@ -12,6 +12,7 @@ window.addToCart = function(name, price) {
   }
 
   renderCart();
+  updateCartCount(); // 🔥 update floating badge
 };
 
 window.removeItem = function(index) {
