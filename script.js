@@ -5,3 +5,27 @@ function openOrderForm() {
 function closeOrderForm() {
     document.getElementById("orderPopup").style.display = "none";
 }
+function sendWhatsApp() {
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let item = document.getElementById("item").value;
+    let address = document.getElementById("address").value;
+
+    let message =
+`🍔 *NEL'S BOGORRR ORDER*
+
+Nama: ${name}
+No Tel: ${phone}
+
+🧾 Order:
+- ${item}
+
+📍 Alamat: ${address}
+
+Terima kasih 🙌`;
+
+    let url = "https://wa.me/601114290341?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
