@@ -1,57 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Order - Nel's Bogorrr</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<h2 style="text-align:center;">🍔 ORDER NEL'S BOGORRR</h2>
-
 <div class="order-box">
 
+  <h2>🍔 BURGER</h2>
+
   <div class="menu-item">
     <label>
-      <input type="checkbox" class="menu-check"
-        data-name="Burger Biasa"
-        data-price="6">
-      Burger Biasa - RM6
+      <input type="checkbox" class="menu-check" data-name="Biasa Ayam" data-price="6">
+      Biasa Ayam - RM6
     </label>
     <input type="number" class="qty" value="1" min="1">
   </div>
 
   <div class="menu-item">
     <label>
-      <input type="checkbox" class="menu-check"
-        data-name="Cheese Burger"
-        data-price="8">
-      Cheese Burger - RM8
+      <input type="checkbox" class="menu-check" data-name="Biasa Beef" data-price="6">
+      Biasa Beef - RM6
     </label>
     <input type="number" class="qty" value="1" min="1">
   </div>
 
   <div class="menu-item">
     <label>
-      <input type="checkbox" class="menu-check"
-        data-name="Fries"
-        data-price="5">
-      Fries - RM5
+      <input type="checkbox" class="menu-check" data-name="Cheese Ayam" data-price="8">
+      Cheese Ayam - RM8
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Cheese Beef" data-price="8">
+      Cheese Beef - RM8
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Special Ayam" data-price="10">
+      Special Ayam - RM10
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Special Beef" data-price="10">
+      Special Beef - RM10
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Double Ayam Cheese" data-price="11">
+      Double Ayam Cheese - RM11
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Double Beef Cheese" data-price="11">
+      Double Beef Cheese - RM11
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Double Ayam Special" data-price="13">
+      Double Ayam Special - RM13
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Double Beef Special" data-price="13">
+      Double Beef Special - RM13
     </label>
     <input type="number" class="qty" value="1" min="1">
   </div>
 
   <hr>
 
-  <h3>Total: RM <span id="totalPrice">0</span></h3>
+  <h2>🍟 SET FRIES</h2>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Ayam Biasa" data-price="9">
+      Set Ayam Biasa - RM9
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Beef Biasa" data-price="9">
+      Set Beef Biasa - RM9
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Ayam Cheese" data-price="11">
+      Set Ayam Cheese - RM11
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Beef Cheese" data-price="11">
+      Set Beef Cheese - RM11
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Ayam Special" data-price="13">
+      Set Ayam Special - RM13
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Beef Special" data-price="13">
+      Set Beef Special - RM13
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Double Ayam Cheese" data-price="14">
+      Set Double Ayam Cheese - RM14
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Double Beef Cheese" data-price="14">
+      Set Double Beef Cheese - RM14
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Double Ayam Special" data-price="16">
+      Set Double Ayam Special - RM16
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Set Double Beef Special" data-price="16">
+      Set Double Beef Special - RM16
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <hr>
+
+  <h2>🥤 SIDES</h2>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Fries" data-price="5">
+      Fries - RM5
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <div class="menu-item">
+    <label>
+      <input type="checkbox" class="menu-check" data-name="Corn Dog" data-price="5">
+      Corn Dog - RM5
+    </label>
+    <input type="number" class="qty" value="1" min="1">
+  </div>
+
+  <hr>
+
+  <h3>Total: RM <span id="totalPrice">0.00</span></h3>
 
   <button id="sendWhatsapp" class="send-btn">
     Send WhatsApp Order
   </button>
 
 </div>
-
-<script src="order.js"></script>
-
-</body>
-</html>
