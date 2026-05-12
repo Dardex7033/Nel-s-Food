@@ -140,6 +140,7 @@ h1 {
 
 .card-header.red { background: var(--primary-red); }
 .card-header.orange { background: var(--primary-orange); }
+}
 .card-header.yellow {
     background: #f4b400;
 }
