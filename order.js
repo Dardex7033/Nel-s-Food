@@ -54,7 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     totalPrice.textContent = total.toFixed(2);
   }
+function toggleCart() {
+  document.getElementById("cartPanel").classList.toggle("open");
+}
 
+function updateCartCount() {
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById("cartCount").textContent = count;
+}
   sendWhatsapp.addEventListener("click", function () {
 
     if (cart.length === 0) {
