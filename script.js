@@ -2,17 +2,19 @@ function orderNow() {
 
     let message =
 `🍔 NEL'S BOGORRR ORDER
+(Delivery Minimum Rm20)
 
-Nama: -
-No Tel: -
+Nama: 
+
+No Tel:
+
+Alamat :
 
 🧾 Order:
-- Burger Ayam RM8
-- Fries RM5
 
-💰 Total: RM13
 
-📍 Alamat: -
+💰 Total: 
+
 
 Terima kasih 🙌`;
 
